@@ -24,7 +24,10 @@
         "dbaeumer.vscode-eslint",
         "1YiB.svelte-bundle",
         "GitHub.vscode-github-actions",
-        "ms-vscode.vscode-node-azure-pack"
+        "ms-vscode.vscode-node-azure-pack",
+        "eamodio.gitlens",
+        "Postman.postman-for-vscode",
+        "ms-azuretools.vscode-docker"
       ]
     }
   }
