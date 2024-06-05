@@ -4,6 +4,8 @@ import { CosmosClient } from '@azure/cosmos';
 import { env } from '$env/dynamic/private';
 import { fail } from '@sveltejs/kit';
 
+console.log(env.COSMOSDB_ENDPOINT);
+
 const client = new CosmosClient({
     endpoint: env.COSMOSDB_ENDPOINT,
     key: env.COSMOSDB_KEY
