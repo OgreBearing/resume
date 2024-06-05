@@ -16,7 +16,7 @@ jobs:
     name: Build and Deploy Job
     env: # Add environment variables here
       COSMOSDB_KEY: ${{ secrets.COSMOSDB_KEY }}
-      COSMOSDB_ENDPOINT: ${{ env.COSMOSDB_ENDPOINT }}
+      COSMOSDB_ENDPOINT: ${{ vars.COSMOSDB_ENDPOINT }}
     steps:
       - uses: actions/checkout@v3
         with:
