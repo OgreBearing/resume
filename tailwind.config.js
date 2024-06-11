@@ -5,6 +5,10 @@ export default {
     ],
     theme: {
       extend: {},
+      fontFamily: {
+        'narrator': 'Permanent Marker',
+        'caps': 'Bangers'
+      }
     },
     plugins: [],
   }
