@@ -33,6 +33,6 @@
 	"dependencies": {
 		"@azure/cosmos": "^4.0.0",
 		"@sveltejs/adapter-node": "^5.0.1",
-		"mssql": "^10.0.2"
+		"mssql": "^7.2.0"
 	}
 }
