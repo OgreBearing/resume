@@ -5,5 +5,10 @@
 
 </script>
 <div class="py-4 font-narrator">
-    <Origin chapters={data.chapters}></Origin>
+    {#if data.chapters.length > 0}
+    <Origin chapters={data.chapters}></Origin>        
+    {/if}
+    {#if data.chapters.length === 0}
+    <p>Fetching data...</p>
+    {/if}
 </div>
