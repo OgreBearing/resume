@@ -30,7 +30,10 @@
         "ms-azuretools.vscode-docker",
         "mtxr.sqltools-driver-mssql",
         "bradlc.vscode-tailwindcss",
-        "austenc.tailwind-docs"
+        "austenc.tailwind-docs",
+        "GitHub.copilot-chat",
+        "GitHub.copilot",
+        "Prisma.prisma"
       ]
     }
   }

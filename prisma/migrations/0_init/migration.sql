@@ -1,0 +1,26 @@
+BEGIN TRY
+
+BEGIN TRAN;
+
+-- CreateTable
+CREATE TABLE [dbo].[About] (
+    [story] TEXT,
+    [displayOrder] INT NOT NULL,
+    [id] INT NOT NULL IDENTITY(1,1),
+    [title] VARCHAR(200),
+    CONSTRAINT [PK__About__3213E83FE3CCAFA8] PRIMARY KEY CLUSTERED ([id])
+);
+
+COMMIT TRAN;
+
+END TRY
+BEGIN CATCH
+
+IF @@TRANCOUNT > 0
+BEGIN
+    ROLLBACK TRAN;
+END;
+THROW
+
+END CATCH
+
