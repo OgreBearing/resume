@@ -15,5 +15,7 @@
             "username": "CloudSA2ff36746",
             "password": "tihsuv-1havhE-zuzguh"
         }
-    ]
+    ],
+    "IDX.aI.enableInlineCompletion": true,
+    "IDX.aI.enableCodebaseIndexing": true
 }
