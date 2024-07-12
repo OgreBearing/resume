@@ -1,52 +1,52 @@
 export const prerender = false;
 
-import { CosmosClient } from '@azure/cosmos';
+//import { CosmosClient } from '@azure/cosmos';
 import { env } from '$env/dynamic/private';
 import { fail } from '@sveltejs/kit';
 
 
 export async function load({ params }) {
-    const client = new CosmosClient({
-        endpoint: env.COSMOSDB_ENDPOINT,
-        key: env.COSMOSDB_KEY
-    });
+//     const client = new CosmosClient({
+//         endpoint: env.COSMOSDB_ENDPOINT,
+//         key: env.COSMOSDB_KEY
+//     });
 
-    console.log('SvelteKit load function processed a request.');
+//     console.log('SvelteKit load function processed a request.');
     
-    const database = client.database('SWAStore');
-    const container = database.container('Items');
+//     const database = client.database('SWAStore');
+//     const container = database.container('Items');
     
-    const { resources: items } = await container.items.readAll().fetchAll();
-    return {
-        items: items
-    };
+//     const { resources: items } = await container.items.readAll().fetchAll();
+     return {
+         items: []
+     };
 }
 
 export const actions = {
-    delete: async ({ cookies, request }) => {
-        //return fail(401, 'Unauthorized')
-        //Uncomment to enable mutations (and remove line above)
-        const client = new CosmosClient({
-            endpoint: env.COSMOSDB_ENDPOINT,
-            key: env.COSMOSDB_KEY
-        });
+    // delete: async ({ cookies, request }) => {
+    //     //return fail(401, 'Unauthorized')
+    //     //Uncomment to enable mutations (and remove line above)
+    //     const client = new CosmosClient({
+    //         endpoint: env.COSMOSDB_ENDPOINT,
+    //         key: env.COSMOSDB_KEY
+    //     });
 
-        console.log('SvelteKit delete action processed a request.');
+    //     console.log('SvelteKit delete action processed a request.');
 
-        const data = await request.formData();
-        const itemId = data.get('id');
+    //     const data = await request.formData();
+    //     const itemId = data.get('id');
         
-        const database = client.database('SWAStore');
-        const container = database.container('Items');
+    //     const database = client.database('SWAStore');
+    //     const container = database.container('Items');
 
-        try{
-            await container.item(itemId, itemId).delete();
-            return {
-                success: true
-            };
-        }
-        catch (error){
-            return fail(500, 'Failed to delete item.')
-        }
-    }
+    //     try{
+    //         await container.item(itemId, itemId).delete();
+    //         return {
+    //             success: true
+    //         };
+    //     }
+    //     catch (error){
+    //         return fail(500, 'Failed to delete item.')
+    //     }
+    // }
 }
