@@ -1,26 +1,8 @@
-BEGIN TRY
-
-BEGIN TRAN;
-
+-- No transaction handling needed in Postgres, it's implicit
 -- CreateTable
-CREATE TABLE [dbo].[About] (
-    [story] TEXT,
-    [displayOrder] INT NOT NULL,
-    [id] INT NOT NULL IDENTITY(1,1),
-    [title] VARCHAR(200),
-    CONSTRAINT [PK__About__3213E83FE3CCAFA8] PRIMARY KEY CLUSTERED ([id])
+CREATE TABLE "About" (
+    "story" TEXT,
+    "displayOrder" INTEGER NOT NULL,
+    "id" SERIAL PRIMARY KEY,
+    "title" VARCHAR(200)
 );
-
-COMMIT TRAN;
-
-END TRY
-BEGIN CATCH
-
-IF @@TRANCOUNT > 0
-BEGIN
-    ROLLBACK TRAN;
-END;
-THROW
-
-END CATCH
-
