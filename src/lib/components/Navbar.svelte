@@ -5,16 +5,24 @@
 
   const paths = [
     { name: "Origin", url: "/" },
-    { name: "Items", url: "/items" },
-    { name: "Sales", url: "/sales" },
+    { name: "Work Experience", url: "/work" },
+    { name: "Skills", url: "/skills" },
+    { name: "Contact", url: "/contact" },
   ];
 </script>
-<div class="flex font-caps">
-  <div class="bg-white px-4 py-[0.65rem]">
-    <div class="container mx-auto text-gray-800 text-5xl font-semibold">Brian George</div>
+<div class="container flex justify-between lg:justify-start font-caps">
+  <div class="bg-white px-4 py-[0.65rem] flex-grow justify-start min-w-300">
+    <div class="mx-auto text-gray-800 text-5xl font-semibold">Brian George</div>
+  </div>
+  <div class="flex justify-end w-full lg:hidden">
+ <button class="text-gray-800 text-5xl">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+    </svg>
+  </button>
   </div>
 
-  <nav>
+  <nav class="justify-start hidden lg:block">
     {#each paths as path, index}
       <div class="inline-block" key={index}>
         <a

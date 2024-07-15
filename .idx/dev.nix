@@ -12,7 +12,7 @@
       "eamodio.gitlens"
       "1YiB.svelte-bundle"
       "bradlc.vscode-tailwindcss"
-      "austenc.tailwind-docs"
+      "alfredbirk.tailwind-documentation"
     ];
     previews = {
       enable = true;
