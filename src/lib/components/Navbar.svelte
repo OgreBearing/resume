@@ -38,27 +38,29 @@
   <div class="text-gray-800 text-5xl font-semibold">Brian George</div>
   <div class="hidden lg:flex space-x-4">  
     {#each paths as path, index}
-      <div class="inline-block">
         <a href={path.url} class="text-gray-800 text-2xl hover:bg-red-300" class:bg-gray-300={($page.url.pathname.includes(path.url) &&
           path.url !== "/") ||
           (path.url === "/" && $page.url.pathname === "/")}>
               <div class="py-2 px-4 m-2 rounded-md bg-inherit">
                 {path.name}
               </div></a>
-      </div>
     {/each}
   </div>
   <div>
     <button class="lg:hidden text-gray-800 text-2xl" on:click={toggleMenu}>
       <p class:hidden={isMenuOpen}><FontAwesomeIcon icon={faBars} /></p>
-      <p class:hidden={!isMenuOpen}><FontAwesomeIcon icon={faXmark} /></p>
     </button>
   </div>
 </nav>
 
-<div class={`fixed top-0 right-0 w-2/3 h-full bg-blue-500 text-white p-4 menu-transition ${isMenuOpen ? 'visible-menu' : 'hidden-menu'}`}>
+<div class={`fixed top-0 right-0 w-2/3 h-full bg-gray-300 text-gray-800 p-4 menu-transition ${isMenuOpen ? 'visible-menu' : 'hidden-menu'}`}>
+  <div class="flex justify-end">
+    <button class="lg:hidden text-gray-800 text-2xl" on:click={toggleMenu}>
+      <p class:hidden={!isMenuOpen}><FontAwesomeIcon icon={faXmark} /></p>
+    </button>
+  </div>
   {#each paths as path, index}
-    <a href={path.url} class="block py-2 hover:bg-red-300" class:bg-gray-300={($page.url.pathname.includes(path.url) &&
+    <a href={path.url} on:click={toggleMenu} class="rounded-md block m-2 hover:bg-red-300" class:bg-gray-500={($page.url.pathname.includes(path.url) &&
       path.url !== "/") ||
       (path.url === "/" && $page.url.pathname === "/")}>
           <div class="py-2 px-4 m-2 rounded-md bg-inherit">
